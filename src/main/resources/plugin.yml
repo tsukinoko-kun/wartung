@@ -1,0 +1,28 @@
+name: Wartung
+version: ${project.version}
+main: de.kuerbisskraft.wartung.Wartung
+api-version: 1.16
+prefix: w
+authors: [ Frank-Mayer ]
+description: Schließe den Server für Wartungsarbeiten
+website: https://kuerbisskraft.de
+commands:
+  wartung:
+    description: Setze den Wartungsstatus des Servers
+permissions:
+  wartung.*:
+    default: op
+    description: Volle Kontrolle über die Wartung
+    children:
+      wartung.on: true
+      wartung.off: true
+      wartung.join: true
+  wartung.on:
+    default: op
+    description: Darf den Wartungsmodus aktivieren
+  wartung.off:
+    default: op
+    description: Darf den Wartungsmodus deaktivieren
+  wartung.join:
+    default: op
+    description: Darf den Server wärend Wartungsarbeiten betreten
